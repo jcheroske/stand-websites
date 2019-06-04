@@ -24,91 +24,119 @@
             font-size: 14px;
         }
 
-        .heading {
+        .red-button {
+            background-color: #bd120f;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            min-width: 80%;
+        }
+
+        .red-button:hover {
+            background-color: #f00;
+        }
+
+        .flex-column-centered {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .heading-container {
+            background-color: #cccccc;
+            margin-block-start: 20px;
+        }
+
+        .heading-container h2 {
             color: #34495e;
         }
 
-        .content {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
-
         .splash {
-            align-items: center;
-            background-color: #A43D3D;
-            display: flex;
-            flex-direction: column;
-            padding: 10px 0px;
+            background-color: #a43d3d;
+            padding-block-start: 10px;
+            padding-block-end: 10px;
             width: 100%;
-        }
-        .splash > img {
-            max-width: 100%;
-            height: auto;
         }
 
         .main-text {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
-        .main-text div {
-            padding: 0px 10px;
-        }
-        .main-text .pure-button {
-            background-color: #A43D3D;
-            border-radius: 5px;
-            color: white;
-            padding: 0.5em 2em;
-            width: 80%;
+            padding-inline-start: 10px;
+            padding-inline-end: 10px;
         }
 
+        .form-container form {
+            padding-inline-start: 10px;
+            padding-inline-end: 10px;
+            width: calc(100% - 20px);
+        }
+
+        .form-container input {
+            width: 100%;
+        }
 
     </style>
 </head>
 
 <body>
 
-
-<div class="content">
-    <div class="splash">
-        <img width="350" alt="STOP FLUSHING OUR FORESTS" src="img/pg-charmin-2.png">
+<div class="flex-column-centered">
+    <div class="flex-column-centered splash">
+        <img class="pure-img" width="350" alt="STOP FLUSHING OUR FORESTS" src="img/pg-charmin-2.png">
     </div>
 
     <div class="main-text">
-        <div>
-            <p>Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
-                boreal forest is critical to fight climate change and protect biodiversity. Unfortunately, <strong>the forest is
-                being flushed down the toilet by Procter &amp; Gamble</strong> for its flagship <strong>TP brand
-                    Charmin.</strong></p>
+        <p>Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
+            boreal forest is critical to fight climate change and protect biodiversity. Unfortunately, <strong>the forest is
+            being flushed down the toilet by Procter &amp; Gamble for its flagship TP brand
+                Charmin.</strong></p>
 
-            <p>While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
-                espouse the virtues of soft toilet paper and “enjoying the go,” Charmin is being called out for greenwashing
-                and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong></p>
+        <p>While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
+            espouse the virtues of soft toilet paper and “enjoying the go,” Charmin is being called out for greenwashing
+            and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong></p>
 
-            <p>C’mon Procter and Gamble, it’s not rocket science: </p>
-            <ol>
+        <p>C’mon Procter and Gamble, it’s not rocket science: </p>
+        <ol>
 
-                <li>Stop using pulp from primary and endangered forests and reduce fiber from natural forests</li>
-                <li>Only use FSC chain-of-custody certified fiber </li>
-                <li>Add recycled and alternative fiber to Charmin toilet paper. </li>
-            </ol>
-
-            <p><strong>Tell Charmin to stop cutting down forests for toilet paper and tissue products. Add your name.</strong></p>
-        </div>
-
-        <p>
-            <a href="https://www.stand.earth/markets-vs-climate/charmin-toilet-paper" class="pure-button">Learn More</a>
-        </p>
+            <li>Stop using pulp from primary and endangered forests and reduce fiber from natural forests</li>
+            <li>Only use FSC chain-of-custody certified fiber </li>
+            <li>Add recycled and alternative fiber to Charmin toilet paper. </li>
+        </ol>
     </div>
 
+    <a href="https://www.stand.earth/markets-vs-climate/charmin-toilet-paper" class="pure-button red-button">Learn More</a>
+
+    <div class="flex-column-centered heading-container">
+        <h2>WHAT CAN YOU DO?</h2>
+    </div>
+
+    <div class="main-text">
+        <p>Tell Charmin to stop cutting down forests for toilet paper and tissue products! <strong>Add your name to the
+            petition.</strong></p>
+    </div>
+
+    <div class="flex-column-centered form-container">
+        <form class="pure-form" name="submit-to-google-sheet">
+            <input name="firstname" type="text" placeholder="First Name">
+
+            <input name="lastname" type="text" placeholder="Last Name">
+
+            <input name="email" type="email" placeholder="Email Address" required>
+
+            <input name="country" type="text" placeholder="Your Country">
+
+            <input name="zip" type="text" placeholder="Zip or Postal Code">
+
+            <button type="submit" class="pure-button red-button">Add your name</button>
+        </form>
+
+    </div>
 </div>
 
 <div id="next" class="content-wrapper">
 
 
 
-    <h2 class="heading">SIGN THE PETITION</h2><div class="form-container">
+    <div class="form-container">
                 <form name="submit-to-google-sheet">
 
                     <fieldset>
