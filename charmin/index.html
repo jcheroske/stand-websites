@@ -26,10 +26,10 @@
 
         .red-button {
             background-color: #bd120f;
-            border-radius: 5px;
+            border-radius: 0;
             color: white;
             font-size: 18px;
-            min-width: 80%;
+            width: 100vw;
         }
 
         .red-button:hover {
@@ -40,63 +40,163 @@
             align-items: center;
             display: flex;
             flex-direction: column;
+        }
+
+        .overlay {
+            align-items: center;
+            background-color: #eee;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: 0;
+            opacity: .75;
+            position: absolute;
+            right: 0;
+            top: 0;
             width: 100%;
         }
 
-        .heading-container {
+        .hidden {
+            display: none !important;
+        }
+
+        .heading {
             background-color: #cccccc;
-            margin-block-start: 20px;
-        }
-
-        .heading-container h2 {
             color: #34495e;
+            margin-block-start: 20px;
+            margin-block-end: 0;
+            padding-block-start: 20px;
+            padding-block-end: 20px;
+            text-align: center;
+            width: 100vw;
         }
 
-        .splash {
+        .splash-container {
             background-color: #a43d3d;
             padding-block-start: 10px;
             padding-block-end: 10px;
-            width: 100%;
+            width: 100vw;
         }
 
-        .main-text {
+        .splash-container img {
+            margin: 0 auto;
+        }
+
+        .text-container {
             padding-inline-start: 10px;
             padding-inline-end: 10px;
         }
 
-        .form-container form {
-            padding-inline-start: 10px;
-            padding-inline-end: 10px;
-            width: calc(100% - 20px);
+        .form-container fieldset {
+            padding: 0;
+            position: relative;
+            width: 100vw;
         }
 
-        .form-container input {
-            width: 100%;
+        .form-container input[type] {
+            background-color: #eee;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            margin-block-end: 10px;
+            padding: 15px;
+            width: 100vw;
         }
 
+        .form-container input[type]:focus {
+            outline: 1px solid #bd120f;
+        }
+
+        @keyframes form-spinner-rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes form-spinner-dash {
+            0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }
+            50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; }
+            100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; }
+        }
+
+        .form-spinner {
+            position: relative;
+            animation: form-spinner-rotate 2s linear infinite;
+            height: 50px;
+            width: 50px;
+        }
+
+        .form-spinner > circle {
+            stroke: #bd120f;
+            stroke-dasharray: 1,200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: form-spinner-dash 1.5s ease-in-out infinite;
+        }
+
+        .footer-container {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-container > img {
+            max-width: 80vw;
+        }
+
+        .footer-social {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            padding-block-start: 20px;
+        }
+
+        .footer-social span {
+            display: block;
+            height: 30px;
+            margin-inline-start: 10px;
+            margin-inline-end: 10px;
+            width: 28px;
+        }
+
+        .footer-facebook-icon {
+            background:url('img/css-sprite-combined.png') -5px -0px;
+        }
+
+        .footer-twitter-icon {
+            background:url('img/css-sprite-combined.png') -38px -0px;
+        }
+
+        .footer-youtube-icon {
+            background:url('img/css-sprite-combined.png') -71px -0px;
+        }
     </style>
 </head>
 
 <body>
 
 <div class="flex-column-centered">
-    <div class="flex-column-centered splash">
+    <div class="splash-container">
         <img class="pure-img" width="350" alt="STOP FLUSHING OUR FORESTS" src="img/pg-charmin-2.png">
     </div>
 
-    <div class="main-text">
-        <p>Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
+    <div class="text-container">
+        <p>
+            Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
             boreal forest is critical to fight climate change and protect biodiversity. Unfortunately, <strong>the forest is
-            being flushed down the toilet by Procter &amp; Gamble for its flagship TP brand
-                Charmin.</strong></p>
+            being flushed down the toilet by Procter &amp; Gamble for its flagship TP brand Charmin.</strong>
+        </p>
 
-        <p>While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
+        <p>
+            While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
             espouse the virtues of soft toilet paper and “enjoying the go,” Charmin is being called out for greenwashing
-            and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong></p>
+            and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong>
+        </p>
 
-        <p>C’mon Procter and Gamble, it’s not rocket science: </p>
+        <p>
+            C’mon Procter and Gamble, it’s not rocket science:
+        </p>
+
         <ol>
-
             <li>Stop using pulp from primary and endangered forests and reduce fiber from natural forests</li>
             <li>Only use FSC chain-of-custody certified fiber </li>
             <li>Add recycled and alternative fiber to Charmin toilet paper. </li>
@@ -105,96 +205,58 @@
 
     <a href="https://www.stand.earth/markets-vs-climate/charmin-toilet-paper" class="pure-button red-button">Learn More</a>
 
-    <div class="flex-column-centered heading-container">
-        <h2>WHAT CAN YOU DO?</h2>
+    <h2 class="heading">WHAT YOU CAN DO!</h2>
+
+    <div class="text-container">
+        <p>
+            Tell Charmin to stop cutting down forests for toilet paper and tissue products!
+        </p>
+
+        <p>
+            <strong>Add your name to the petition:</strong>
+        </p>
     </div>
 
-    <div class="main-text">
-        <p>Tell Charmin to stop cutting down forests for toilet paper and tissue products! <strong>Add your name to the
-            petition.</strong></p>
-    </div>
+    <div class="form-container">
+        <form class="flex-column-centered pure-form" name="submit-to-google-sheet">
+            <fieldset>
+                <input name="firstname" type="text" placeholder="First Name" required>
 
-    <div class="flex-column-centered form-container">
-        <form class="pure-form" name="submit-to-google-sheet">
-            <input name="firstname" type="text" placeholder="First Name">
+                <input name="lastname" type="text" placeholder="Last Name" required>
 
-            <input name="lastname" type="text" placeholder="Last Name">
+                <input name="email" type="email" placeholder="Email Address" required>
 
-            <input name="email" type="email" placeholder="Email Address" required>
+                <input name="country" type="text" placeholder="Your Country">
 
-            <input name="country" type="text" placeholder="Your Country">
+                <input name="zip" type="text" placeholder="Zip or Postal Code">
 
-            <input name="zip" type="text" placeholder="Zip or Postal Code">
+                <div class="overlay hidden">
+                    <svg class="form-overlay-item form-spinner hidden">
+                        <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+                    </svg>
 
-            <button type="submit" class="pure-button red-button">Add your name</button>
+                    <p class="form-overlay-item form-success hidden">Thank you for adding your name!</p>
+
+                    <p class="form-overlay-item form-error hidden">An error occurred during form submission!</p>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="pure-button red-button">Submit Petition</button>
         </form>
 
     </div>
-</div>
 
-<div id="next" class="content-wrapper">
+    <div class="flex-column-centered footer-container">
+        <img class="pure-img" alt="STAND" src="img/logo-red.png">
 
-
-
-    <div class="form-container">
-                <form name="submit-to-google-sheet">
-
-                    <fieldset>
-
-
-                        <input name="firstname" type="text" placeholder="First Name">
-
-
-                        <input name="lastname" type="text" placeholder="Last Name">
-
-
-
-                        <input name="email" type="email" placeholder="Email Address">
-
-
-                        <input name="country" type="text" placeholder="Your Country">
-
-
-                        <input name="zip" type="text" placeholder="Zip or Postal Code">
-
-                        <button type="submit" class="pure-button">Add your name</button>
-                    </fieldset>
-                </form>
-                <div class="loading js-loading is-hidden">
-                <div class="loading-spinner">
-                <svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle></svg>
-                </div>
-                </div>
-
-                <p class="js-success-message is-hidden">Thank you for adding your name!</p>
-                <p class="js-error-message is-hidden">Error!</p>
-                </div><div class="content">
-
-
-        <div class="pure-g">
-
-
-
-
-
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-            </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/standearth"><span class="footer-facebook-icon"></span></a>
+            <a href="https://twitter.com/standearth"><span class="footer-twitter-icon"></span></a>
+            <a href="https://www.youtube.com/user/ForestEthics"><span class="footer-youtube-icon"></span></a>
         </div>
 
-
-    </div>
-
-    <div class="footer l-box is-center">
-        <p><img alt="" class="logo" src="img/logo-red.png" width="200px"></p>
-            <ul class="social-menu">
-                <li><a href="https://www.facebook.com/standearth" class="fa-facebook facebook"><span class="si-sprite-face"></span></a></li>
-                <li><a href="https://twitter.com/standearth" class="fa-twitter"><span class="si-sprite-tw"></span></a></li>
-                <li><a href="https://www.youtube.com/user/ForestEthics" class="fa-youtube-play youtube"><span class="si-sprite-yt"></span></a></li>
-            </ul>
-          <p>Stand is an advocacy organization that brings people together to demand that corporations<br>
-            and governments put people and the environment first.</p>
-
+        <p>Stand is an advocacy organization that brings people together to demand that corporations
+        and governments put people and the environment first.</p>
     </div>
 
 </div>
@@ -202,39 +264,38 @@
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyvJpvM1YxHVTDg8rn0Wa9kSh8LneyvCnF_SgLMKWQtJHqYuzw/exec'
     const form = document.forms['submit-to-google-sheet']
-    const loading = document.querySelector('.js-loading')
-    const successMessage = document.querySelector('.js-success-message')
-    const errorMessage = document.querySelector('.js-error-message')
 
     form.addEventListener('submit', e => {
       e.preventDefault()
-      showLoadingIndicator()
+      showOverlay('form-spinner')
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => showSuccessMessage(response))
-        .catch(error => showErrorMessage(error))
+        .then(onFormSuccess)
+        .catch(onFormError)
     })
 
-    function showLoadingIndicator () {
-      form.classList.add('is-hidden')
-      loading.classList.remove('is-hidden')
+    const showOverlay = type => {
+      document.querySelector('.overlay').classList.remove('hidden')
+      document.querySelector('.form-overlay-item').classList.add('hidden')
+      document.querySelector(`.${type}`).classList.remove('hidden')
     }
 
-    function showSuccessMessage (response) {
+    const hideOverlay = () => {
+      document.querySelector('.overlay').classList.add('hidden')
+      document.querySelector('.form-overlay-item').classList.add('hidden')
+    }
+
+    const onFormSuccess = response => {
       console.log('Success!', response)
-      setTimeout(() => {
-        successMessage.classList.remove('is-hidden')
-        loading.classList.add('is-hidden')
-      }, 500)
+      showOverlay('form-success')
+      form.reset()
+      setTimeout(hideOverlay, 5000)
     }
 
-    function showErrorMessage (error) {
+    const onFormError = error => {
       console.error('Error!', error.message)
-      setTimeout(() => {
-        errorMessage.classList.remove('is-hidden')
-        loading.classList.add('is-hidden')
-      }, 500)
+      showOverlay('form-error')
+      setTimeout(hideOverlay, 500)
     }
   </script>
-
 </body>
 </html>
