@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Procter and Gamble: Nature is Calling... Charmin stop flushing nature down the toilet">
+
+    <title>Charmin stop flushing nature down the toilet</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108241734-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108241734-1');
+    </script>
+
+    <style type="text/css">
+        body {
+            line-height: 1.7em;
+            font-size: 14px;
+        }
+
+        .heading {
+            color: #34495e;
+        }
+
+        .content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .splash {
+            align-items: center;
+            background-color: #A43D3D;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0px;
+            width: 100%;
+        }
+        .splash > img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-text {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-text div {
+            padding: 0px 10px;
+        }
+        .main-text .pure-button {
+            background-color: #A43D3D;
+            border-radius: 5px;
+            color: white;
+            padding: 0.5em 2em;
+            width: 80%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+<div class="content">
+    <div class="splash">
+        <img width="350" alt="STOP FLUSHING OUR FORESTS" src="img/pg-charmin-2.png">
+    </div>
+
+    <div class="main-text">
+        <div>
+            <p>Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
+                boreal forest is critical to fight climate change and protect biodiversity. Unfortunately, <strong>the forest is
+                being flushed down the toilet by Procter &amp; Gamble</strong> for its flagship <strong>TP brand
+                    Charmin.</strong></p>
+
+            <p>While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
+                espouse the virtues of soft toilet paper and “enjoying the go,” Charmin is being called out for greenwashing
+                and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong></p>
+
+            <p>C’mon Procter and Gamble, it’s not rocket science: </p>
+            <ol>
+
+                <li>Stop using pulp from primary and endangered forests and reduce fiber from natural forests</li>
+                <li>Only use FSC chain-of-custody certified fiber </li>
+                <li>Add recycled and alternative fiber to Charmin toilet paper. </li>
+            </ol>
+
+            <p><strong>Tell Charmin to stop cutting down forests for toilet paper and tissue products. Add your name.</strong></p>
+        </div>
+
+        <p>
+            <a href="https://www.stand.earth/markets-vs-climate/charmin-toilet-paper" class="pure-button">Learn More</a>
+        </p>
+    </div>
+
+</div>
+
+<div id="next" class="content-wrapper">
+
+
+
+    <h2 class="heading">SIGN THE PETITION</h2><div class="form-container">
+                <form name="submit-to-google-sheet">
+
+                    <fieldset>
+
+
+                        <input name="firstname" type="text" placeholder="First Name">
+
+
+                        <input name="lastname" type="text" placeholder="Last Name">
+
+
+
+                        <input name="email" type="email" placeholder="Email Address">
+
+
+                        <input name="country" type="text" placeholder="Your Country">
+
+
+                        <input name="zip" type="text" placeholder="Zip or Postal Code">
+
+                        <button type="submit" class="pure-button">Add your name</button>
+                    </fieldset>
+                </form>
+                <div class="loading js-loading is-hidden">
+                <div class="loading-spinner">
+                <svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle></svg>
+                </div>
+                </div>
+
+                <p class="js-success-message is-hidden">Thank you for adding your name!</p>
+                <p class="js-error-message is-hidden">Error!</p>
+                </div><div class="content">
+
+
+        <div class="pure-g">
+
+
+
+
+
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer l-box is-center">
+        <p><img alt="" class="logo" src="img/logo-red.png" width="200px"></p>
+            <ul class="social-menu">
+                <li><a href="https://www.facebook.com/standearth" class="fa-facebook facebook"><span class="si-sprite-face"></span></a></li>
+                <li><a href="https://twitter.com/standearth" class="fa-twitter"><span class="si-sprite-tw"></span></a></li>
+                <li><a href="https://www.youtube.com/user/ForestEthics" class="fa-youtube-play youtube"><span class="si-sprite-yt"></span></a></li>
+            </ul>
+          <p>Stand is an advocacy organization that brings people together to demand that corporations<br>
+            and governments put people and the environment first.</p>
+
+    </div>
+
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvJpvM1YxHVTDg8rn0Wa9kSh8LneyvCnF_SgLMKWQtJHqYuzw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const loading = document.querySelector('.js-loading')
+    const successMessage = document.querySelector('.js-success-message')
+    const errorMessage = document.querySelector('.js-error-message')
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      showLoadingIndicator()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => showSuccessMessage(response))
+        .catch(error => showErrorMessage(error))
+    })
+
+    function showLoadingIndicator () {
+      form.classList.add('is-hidden')
+      loading.classList.remove('is-hidden')
+    }
+
+    function showSuccessMessage (response) {
+      console.log('Success!', response)
+      setTimeout(() => {
+        successMessage.classList.remove('is-hidden')
+        loading.classList.add('is-hidden')
+      }, 500)
+    }
+
+    function showErrorMessage (error) {
+      console.error('Error!', error.message)
+      setTimeout(() => {
+        errorMessage.classList.remove('is-hidden')
+        loading.classList.add('is-hidden')
+      }, 500)
+    }
+  </script>
+
+</body>
+</html>
