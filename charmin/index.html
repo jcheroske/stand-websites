@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <base href="https://storage.cloud.google.com/charmin/" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Procter and Gamble: Nature is Calling... Charmin stop flushing nature down the toilet">
@@ -19,30 +20,51 @@
     </script>
 
     <style type="text/css">
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
         body {
             line-height: 1.7em;
             font-size: 14px;
         }
 
-        .red-button {
-            background-color: #bd120f;
-            border-radius: 0;
-            color: white;
-            font-size: 18px;
-            width: 100vw;
+        .center-horz {
+            margin-inline-start: auto;
+            margin-inline-end: auto;
         }
 
-        .red-button:hover {
-            background-color: #f00;
-        }
-
-        .flex-column-centered {
+        .column-horz-center {
             align-items: center;
             display: flex;
             flex-direction: column;
         }
 
-        .overlay {
+        .hidden {
+            display: none !important;
+        }
+
+        #top-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #top-container .heading {
+            background-color: #cccccc;
+            color: #34495e;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-block-start: 20px;
+            padding-block-end: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        #top-container .overlay {
             align-items: center;
             background-color: #eee;
             bottom: 0;
@@ -50,61 +72,61 @@
             flex-direction: column;
             justify-content: center;
             left: 0;
-            opacity: .75;
+            opacity: .8;
             position: absolute;
             right: 0;
             top: 0;
             width: 100%;
         }
 
-        .hidden {
-            display: none !important;
-        }
-
-        .heading {
-            background-color: #cccccc;
-            color: #34495e;
+        #top-container .red-button {
+            background-color: #bd120f;
+            color: white;
+            font-size: 18px;
             margin-block-start: 20px;
-            margin-block-end: 0;
-            padding-block-start: 20px;
-            padding-block-end: 20px;
-            text-align: center;
-            width: 100vw;
+            margin-block-end: 20px;
+            width: 100%;
         }
 
-        .splash-container {
+        #top-container .red-button:hover {
+            background-color: #f00;
+        }
+
+        #top-container .responsive-radius {
+            border-radius: 0;
+        }
+
+        #splash-container {
             background-color: #a43d3d;
             padding-block-start: 10px;
             padding-block-end: 10px;
-            width: 100vw;
         }
 
-        .splash-container img {
-            margin: 0 auto;
+        #top-container > p {
+            margin-inline-start: 1em;
+            margin-inline-end: 1em;
         }
 
-        .text-container {
-            padding-inline-start: 10px;
-            padding-inline-end: 10px;
-        }
-
-        .form-container fieldset {
+        #top-container fieldset {
             padding: 0;
             position: relative;
-            width: 100vw;
+            width: 100%;
         }
 
-        .form-container input[type] {
+        #top-container input[type] {
             background-color: #eee;
             border: none;
-            border-radius: 0;
             box-shadow: none;
             margin-block-end: 10px;
             padding: 15px;
-            width: 100vw;
+            width: 100%;
         }
 
-        .form-container input[type]:focus {
+        #top-container input[type]:last-of-type {
+            margin-block-end: 0;
+        }
+
+        #top-container input[type]:focus {
             outline: 1px solid #bd120f;
         }
 
@@ -133,24 +155,21 @@
             animation: form-spinner-dash 1.5s ease-in-out infinite;
         }
 
-        .footer-container {
+        #footer-container {
             background-color: #eee;
             padding: 20px;
             text-align: center;
         }
 
-        .footer-container > img {
-            max-width: 80vw;
-        }
-
-        .footer-social {
+        #footer-social {
             align-items: center;
             display: flex;
             flex-direction: row;
+            justify-content: center;
             padding-block-start: 20px;
         }
 
-        .footer-social span {
+        #footer-social span {
             display: block;
             height: 30px;
             margin-inline-start: 10px;
@@ -158,98 +177,143 @@
             width: 28px;
         }
 
-        .footer-facebook-icon {
-            background:url('img/css-sprite-combined.png') -5px -0px;
+        #footer-social .footer-facebook-icon {
+            background:url('css-sprite-combined.png') -5px -0px;
         }
 
-        .footer-twitter-icon {
-            background:url('img/css-sprite-combined.png') -38px -0px;
+        #footer-social .footer-twitter-icon {
+            background:url('css-sprite-combined.png') -38px -0px;
         }
 
-        .footer-youtube-icon {
-            background:url('img/css-sprite-combined.png') -71px -0px;
+        #footer-social .footer-youtube-icon {
+            background:url('css-sprite-combined.png') -71px -0px;
+        }
+
+        @media only screen and (min-width: 568px) {
+            #top-container fieldset {
+                border: 1px solid #ccc;
+                box-shadow: 0 10px 50px 0 #ccc;
+                padding: 20px;
+            }
+
+            #top-container input[type] {
+                border: 1px solid #ccc;
+                margin-block-end: 15px;
+            }
+
+            #top-container .heading {
+                border: 1px solid black;
+            }
+
+            #top-container .responsive-radius {
+                border-radius: 5px;
+            }
+
+            #top-container {
+                margin: 20px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            #top-container {
+                margin-inline-start: 40px;
+                margin-inline-end: 40px;
+            }
+
+            #top-container .responsive-width {
+                align-self: center;
+                width: 80%;
+            }
+
+        }
+
+        @media only screen and (min-width: 1024px) {
+            #top-container {
+                margin-block-start: 40px;
+                margin-block-end: 40px;
+                margin-inline-start: 80px;
+                margin-inline-end: 80px;
+            }
+
+            #top-container .responsive-width {
+                width: 70%;
+            }
+
         }
     </style>
 </head>
 
 <body>
 
-<div class="flex-column-centered">
-    <div class="splash-container">
-        <img class="pure-img" width="350" alt="STOP FLUSHING OUR FORESTS" src="img/pg-charmin-2.png">
+<div class="" id="top-container">
+    <div class="" id="splash-container">
+        <img class="center-horz pure-img" width="350" alt="STOP FLUSHING OUR FORESTS" src="pg-charmin-2.png">
     </div>
 
-    <div class="text-container">
-        <p>
-            Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
-            boreal forest is critical to fight climate change and protect biodiversity. Unfortunately, <strong>the forest is
-            being flushed down the toilet by Procter &amp; Gamble for its flagship TP brand Charmin.</strong>
-        </p>
+    <p>
+        Welcome to Sustainable Brands, and thanks for your efforts to tackle the big issues! Protecting the Canadian
+        boreal forest is critical to fight climate change and protect biodiversity. Unfortunately, <strong>the forest is
+        being flushed down the toilet by Procter &amp; Gamble for its flagship TP brand Charmin.</strong>
+    </p>
 
-        <p>
-            While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
-            espouse the virtues of soft toilet paper and “enjoying the go,” Charmin is being called out for greenwashing
-            and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong>
-        </p>
+    <p>
+        While Charmin’s website is full of claims about protecting forests, and its cute Charmin bears
+        espouse the virtues of soft toilet paper and “enjoying the go,” Charmin is being called out for greenwashing
+        and <strong>P&amp;G needs to step up to make Charmin a brand for good.</strong>
+    </p>
 
-        <p>
-            C’mon Procter and Gamble, it’s not rocket science:
-        </p>
+    <p>
+        C’mon Procter and Gamble, it’s not rocket science:
+    </p>
 
-        <ol>
-            <li>Stop using pulp from primary and endangered forests and reduce fiber from natural forests</li>
-            <li>Only use FSC chain-of-custody certified fiber </li>
-            <li>Add recycled and alternative fiber to Charmin toilet paper. </li>
-        </ol>
-    </div>
+    <ol>
+        <li>Stop using pulp from primary and endangered forests and reduce fiber from natural forests</li>
+        <li>Only use FSC chain-of-custody certified fiber </li>
+        <li>Add recycled and alternative fiber to Charmin toilet paper. </li>
+    </ol>
 
-    <a href="https://www.stand.earth/markets-vs-climate/charmin-toilet-paper" class="pure-button red-button">Learn More</a>
+    <a href="https://www.stand.earth/markets-vs-climate/charmin-toilet-paper" class="pure-button red-button responsive-radius responsive-width">Learn More</a>
 
-    <h2 class="heading">WHAT YOU CAN DO!</h2>
+    <h2 class="heading responsive-width">WHAT YOU CAN DO!</h2>
 
-    <div class="text-container">
-        <p>
-            Tell Charmin to stop cutting down forests for toilet paper and tissue products!
-        </p>
+    <p>
+        Tell Charmin to stop cutting down forests for toilet paper and tissue products!
+    </p>
 
-        <p>
-            <strong>Add your name to the petition:</strong>
-        </p>
-    </div>
+    <p>
+        <strong>Add your name to the petition:</strong>
+    </p>
 
-    <div class="form-container">
-        <form class="flex-column-centered pure-form" name="submit-to-google-sheet">
-            <fieldset>
-                <input name="firstname" type="text" placeholder="First Name" required>
+    <form class="column-horz-center pure-form pure-form-stacked" name="submit-to-google-sheet">
+        <fieldset class="responsive-radius responsive-width">
+            <input class="responsive-radius" name="firstname" type="text" placeholder="First Name" required>
 
-                <input name="lastname" type="text" placeholder="Last Name" required>
+            <input class="responsive-radius" name="lastname" type="text" placeholder="Last Name" required>
 
-                <input name="email" type="email" placeholder="Email Address" required>
+            <input class="responsive-radius" name="email" type="email" placeholder="Email Address" required>
 
-                <input name="country" type="text" placeholder="Your Country">
+            <input class="responsive-radius" name="country" type="text" placeholder="Your Country">
 
-                <input name="zip" type="text" placeholder="Zip or Postal Code">
+            <input class="responsive-radius" name="zip" type="text" placeholder="Zip or Postal Code">
 
-                <div class="overlay hidden">
-                    <svg class="form-overlay-item form-spinner hidden">
-                        <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
-                    </svg>
+            <div class="overlay hidden">
+                <svg class="form-overlay-item form-spinner hidden">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+                </svg>
 
-                    <p class="form-overlay-item form-success hidden">Thank you for adding your name!</p>
+                <p class="form-overlay-item form-success hidden"><strong>Thank you for adding your name!</strong></p>
 
-                    <p class="form-overlay-item form-error hidden">An error occurred during form submission!</p>
-                </div>
-            </fieldset>
+                <p class="form-overlay-item form-error hidden"><strong>An error occurred during form submission!</strong></p>
+            </div>
+        </fieldset>
 
-            <button type="submit" class="pure-button red-button">Submit Petition</button>
-        </form>
+        <button type="submit" class="pure-button red-button responsive-radius responsive-width">Submit Petition</button>
+    </form>
 
-    </div>
+    <div class="" id="footer-container">
+        <img class="center-horz pure-img" alt="STAND" src="logo-red.png">
 
-    <div class="flex-column-centered footer-container">
-        <img class="pure-img" alt="STAND" src="img/logo-red.png">
-
-        <div class="footer-social">
+        <div id="footer-social">
             <a href="https://www.facebook.com/standearth"><span class="footer-facebook-icon"></span></a>
             <a href="https://twitter.com/standearth"><span class="footer-twitter-icon"></span></a>
             <a href="https://www.youtube.com/user/ForestEthics"><span class="footer-youtube-icon"></span></a>
