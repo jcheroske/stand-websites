@@ -16,15 +16,14 @@
           type="image/png"
           href="./favicon.ico" />
 
-    <base href="https://www.protectthearcticrefuge.org" />
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108241734-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147105941-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-108241734-1');
+      gtag('config', 'UA-147105941-2');
     </script>
 
     <style type="text/css">
@@ -38,19 +37,296 @@
 
         body {
             line-height: 1.7em;
-            font-size: 14px;
+            font-size: 16px;
+            font-family: sans-serif;
         }
 
         .center-horz {
             margin-inline-start: auto;
             margin-inline-end: auto;
         }
+
+        .column-horz-center {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        #top-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #top-container .heading {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 5px;
+            padding-inline-end: 5px;
+            width: 100%;
+        }
+
+        #top-container h1.heading {
+            background-color: lightgrey;
+            color: black;
+            margin-block-end: 20px;
+            padding-block-start: 20px;
+            padding-block-end: 20px;
+            text-align: center;
+        }
+
+        #top-container h2.heading {
+            background-color: white;
+            color: darkred;
+            text-align: left;
+        }
+
+        #top-container .overlay {
+            align-items: center;
+            background-color: #eee;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: 0;
+            opacity: .8;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        #top-container .red-button {
+            background-color: #bd120f;
+            color: white;
+            font-size: 18px;
+            margin-block-start: 20px;
+            margin-block-end: 20px;
+            width: 100%;
+        }
+
+        #top-container .red-button:hover {
+            background-color: #f00;
+        }
+
+        #top-container .responsive-radius {
+            border-radius: 0;
+        }
+
+        #splash-container {
+            background-color: white;
+            padding-block-end: 10px;
+        }
+
+        #top-container > p {
+            margin-inline-start: 1em;
+            margin-inline-end: 1em;
+        }
+
+        #top-container > p > a {
+            color: darkred;
+            text-decoration: none;
+        }
+
+        #top-container fieldset {
+            padding: 0;
+            position: relative;
+            width: 100%;
+        }
+
+        #top-container input[type] {
+            background-color: #eee;
+            border: none;
+            box-shadow: none;
+            margin-block-end: 10px;
+            padding: 15px;
+            width: 100%;
+        }
+
+        #top-container input[type]:last-of-type {
+            margin-block-end: 0;
+        }
+
+        #top-container input[type]:focus {
+            outline: 1px solid #bd120f;
+        }
+
+        #top-container .photo-credit {
+            font-size: 12px;
+        }
+
+        @keyframes form-spinner-rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes form-spinner-dash {
+            0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }
+            50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; }
+            100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; }
+        }
+
+        .form-spinner {
+            position: relative;
+            animation: form-spinner-rotate 2s linear infinite;
+            height: 50px;
+            width: 50px;
+        }
+
+        .form-spinner > circle {
+            stroke: #bd120f;
+            stroke-dasharray: 1,200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: form-spinner-dash 1.5s ease-in-out infinite;
+        }
+
+        #footer-container {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #footer-social {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-block-start: 20px;
+        }
+
+        #footer-social span {
+            display: block;
+            height: 30px;
+            margin-inline-start: 10px;
+            margin-inline-end: 10px;
+            width: 28px;
+        }
+
+        #footer-social .footer-facebook-icon {
+            background:url('css-sprite-combined.png') -5px -0px;
+        }
+
+        #footer-social .footer-twitter-icon {
+            background:url('css-sprite-combined.png') -38px -0px;
+        }
+
+        #footer-social .footer-youtube-icon {
+            background:url('css-sprite-combined.png') -71px -0px;
+        }
+
+        @media only screen and (min-width: 568px) {
+            #top-container fieldset {
+                border: 1px solid #ccc;
+                box-shadow: 0 10px 50px 0 #ccc;
+                padding: 20px;
+            }
+
+            #top-container input[type] {
+                border: 1px solid #ccc;
+                margin-block-end: 15px;
+            }
+
+            #top-container .heading {
+                /*border: 1px solid black;*/
+            }
+
+            #top-container .responsive-radius {
+                border-radius: 5px;
+            }
+
+            #top-container {
+                margin: 20px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            #top-container {
+                margin: 40px;
+            }
+
+            #top-container .responsive-width {
+                align-self: center;
+            }
+
+        }
+
+        @media only screen and (min-width: 1024px) {
+            #top-container {
+                margin: 80px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<h1>WWW</h1>
+<div class="" id="top-container">
+    <div id="splash-container">
+        <img class="center-horz pure-img" src="banner.jpg" />
+    </div>
 
+    <h1 class="heading responsive-width">Welcome to Petro Show 2019!</h1>
+
+    <h2 class="heading responsive-width">
+        Would your customers want fuel that violated indigenous rights and destroyed a sacred and sensitive area -
+        the Arctic National Wildlife Refuge?
+    </h2>
+
+    <p>
+        Of course not! Drilling in the sacred Arctic National Wildlife Refuge is bad for business. BP did the right
+        thing by cancelling its plans to drill. What does BP know that other oil companies don’t? <strong>Chevron and
+        Exxon, we’re looking at you.</strong>
+    </p>
+
+    <h1 class="heading responsive-width">Drilling in the Arctic Refuge is bad for business</h1>
+
+    <h2 class="heading responsive-width">
+        The public pressure and scrutiny on companies associated with drilling will be intense
+    </h2>
+
+    <p>
+        Drilling in the Arctic Refuge would violate the human rights of the Gwich'in, the northernmost Indian Nation.
+        Banks and investors have seen what happens when an oil company dares to infringe on the rights of Indigenous
+        people, from the Dakota Access Pipeline to the Keystone Pipeline to the Trans Mountain Pipeline. Companies
+        involved in drilling the Arctic Refuge put their brands at risk.
+    </p>
+
+    <h2 class="heading responsive-width">BP is exiting Alaska. Why?</h2>
+
+    <p>
+        In late August, BP announced that it is selling its assets in Alaska, including its 49% share in the Trans Alaska
+        Pipeline, and <a
+            href="https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-to-sell-alaska-business-to-hilcorp.html">"non-operating
+        interests in exploration leases in ANWR."</a> BP is also one of two companies who has
+        the <a href="https://www.nytimes.com/2019/04/02/us/arctic-oil-drilling-well-data.html">results of a lone
+        exploratory well</a> drilled in the Arctic Refuge. Clearly, the results were not promising.
+        This <a
+            href="https://insideclimatenews.org/news/28082019/bp-hilcorp-sale-alaska-oil-gas-pipeline-prudhoe-bay-safety-concerns">$5.6
+        billion sale</a> to private company Hilcorp implies that the company sees the writing on the wall:
+        <strong>Arctic drilling is bad business and a bad investment.</strong>
+    </p>
+
+    <div id="photo-container">
+        <img class="center-horz pure-img" src="denver_action.jpg" />
+        <span class="photo-credit">Photo Credit: Justin Forrest Parks</span>
+    </div>
+
+    <div class="" id="footer-container">
+        <img class="center-horz pure-img" alt="STAND" src="logo-red.png">
+
+        <div id="footer-social">
+            <a href="https://www.facebook.com/standearth"><span class="footer-facebook-icon"></span></a>
+            <a href="https://twitter.com/standearth"><span class="footer-twitter-icon"></span></a>
+            <a href="https://www.youtube.com/user/ForestEthics"><span class="footer-youtube-icon"></span></a>
+        </div>
+
+        <p>Stand is an advocacy organization that brings people together to demand that corporations
+            and governments put people and the environment first.</p>
+    </div>
+
+</div>
 </body>
 </html>
